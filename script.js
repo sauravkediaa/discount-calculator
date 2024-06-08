@@ -15,7 +15,7 @@ function calculate() {
     }
 
 function resetForm() {
-    document.getElementById('MRP').value = '';
+    document.getElementById('mrp').value = '';
     document.getElementById('discountPrice').value = '';
     document.getElementById('result').innerHTML = '';
 }
