@@ -3,16 +3,26 @@ function calculate() {
     const discountPrice = parseFloat(document.getElementById('discountPrice').value);
 
     if (isNaN(MRP) || isNaN(discountPrice)) {
-        alert("Please enter valid numbers for Buy and Sell prices.");
-        return;
+        if (isNaN(MRP) && isNaN(discountPrice)) {
+            alert("Please enter valid numbers for MRP and Discount price.");
+            return;
+        }
+        else if (isNaN(MRP)) {
+            alert("Please enter valid number for MRP");
+            return;
+        }
+        else if (isNaN(discountPrice)) {
+            alert("Please enter valid number for Discount Price");
+            return;
+        }
     }
 
     const discountPercent = ((discountPrice) / MRP) * 100;
 
-        document.getElementById('result').innerHTML = `
+    document.getElementById('result').innerHTML = `
             <p><b>Discount Percentage: </b> ${discountPercent.toFixed(2)}%</p>
         `;
-    }
+}
 
 function resetForm() {
     document.getElementById('mrp').value = '';
